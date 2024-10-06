@@ -1,0 +1,344 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --base: #555;
+    --base-100:#f1f1f1;
+    --base-800:#000;
+    --yellow:#ffda4b;
+    --yellow-50:#fffdf5;
+    --yellow-100:#fffbe6;
+    --yellow-800:#8b6f00;
+    --blue:#0a61ae;
+    --blue-100:#e2f8ff;
+    --blue-400:#61dafb;
+    --blue-800:#0a61a2;
+    --blue-900:#001b3b;
+}
+.coming-soon-regular {
+    font-family: "Coming Soon", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+.protest-strike-regular {
+    font-family: "Protest Strike", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+a{
+    text-decoration: none;
+    color: var(--blue);
+    &:hover{
+        text-decoration: underline;
+    }
+}
+li{
+    list-style-type: none;
+}
+li .contact-btn{
+    border-radius: 12px;
+    background-color: var(--blue-800);
+    color: white;
+    font-weight: 800;
+}
+
+header{
+    padding: 4px 20px;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1440px;
+    margin: auto;
+    border-bottom: 2px solid rgba(0,0,0,0.4);
+    border-radius: 10px;
+    text-transform: capitalize;
+    @media (max-width:700px) {
+        padding: 10px 20px;
+        display: block;
+    }
+    @media (max-width:1000px) {
+        flex-direction: column;
+        align-items: center;
+    }
+    .logo-holder{
+        display: flex;
+        padding: 10px;
+        align-items: center;
+        font-weight: 600;
+        color: var(--base-800);
+        .logo{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            background-color: var(--base-800);
+            height: 64px;
+            width: 64px;
+            border-radius: 50%;
+            margin-right: 20px;
+            color: var(--base-100);
+        }
+        .logo-text{
+            flex: 1;
+            font-size: 28px;
+        }
+        @media (max-width:480px) {
+            .logo{
+                height: 56px;
+                width: 56px;
+                font-size: 26px;
+                margin-right: 10px;
+            }
+            .logo-text{
+                font-size: 18px;
+            }
+        }
+    }
+
+    nav{
+        display: flex;
+        align-items: center;
+        ul{
+            display: flex;
+            font-size: 24px;
+            li{
+                display: inline-block;
+                a{
+                    display: inline-block;
+                    padding: 10px 20px;
+                    color: var(--base);
+                    &:hover{
+                        background-color: var(--base-100);
+                        border-radius: 10px;
+                        text-decoration: none;
+                    }
+                }
+            } 
+        }
+        .mobile-toggle{
+            display: none;
+            color: var(--base-800);
+            padding: 10px;
+            @media (max-width:700px)  {
+                display: inline-block;
+                position: absolute;
+                top: 22px;
+                right: 25px;
+                
+            }
+            @media (max-width:700px)  {
+                right: 10px;
+            }
+            @media (max-width:480px) {
+                top: 14px;
+            }
+        }
+        
+    }
+    @media (max-width:700px) {
+        flex-direction: column;
+        align-items: center;
+        nav{
+            margin: auto;
+            width: 100%;
+            ul{
+                flex-direction: column;
+                text-align: center;
+                width: 100%;
+                display: none;
+                font-size: large;
+                a{
+                    width: 100%;
+                }
+                &.active{
+                    display: flex;
+                } 
+            }
+
+        }
+    }
+    @media (max-width:1000px) {
+        nav{
+            width: 100%;
+            justify-content: center;
+        }
+        ul{
+            width: 90%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+    }
+    @media only screen and (max-width:480px) {
+        header{
+            padding:4px 10px;
+        }
+        .logo{
+            height: 56px;
+            width: 56px;
+            font-size: 26px;
+            margin-right: 10px;
+        }
+    }
+}
+
+.hero-section{
+    position: relative;
+    border: 2px solid black;
+    height: 75vh;
+    max-width: 1440px;
+    margin: auto;
+    display: flex;
+    padding: 60px;
+    gap: 60px;
+    .container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -10;
+        height: 100%;
+        width: 100%;
+        background-color: var(--yellow-50);
+    }
+    .circle {
+        position: absolute;
+        bottom: auto;
+        left: auto;
+        right: 0;
+        top: 0;
+        height: 500px;
+        width: 500px;
+        transform: translate(-30%, 20%);
+        border-radius: 50%;
+        background-color: var(--blue-400);
+        opacity: 0.4;
+        filter: blur(80px);
+    }
+    .description{
+        width: 100%;
+        margin: auto;
+        line-height: 1.5;
+        .greeting{
+            font-size: xx-large;
+            font-family: sans-serif;
+            font-weight: 600;
+            display: block;
+        }
+        .my-name{
+            font-size: 46px;
+            font-family: Protest Strike , cursive;
+            color: var(--blue-800);
+        }
+        .short-description{
+            font-size: larger;
+            font-family: cursive;
+            letter-spacing: 1.5px;  
+        }
+        button, .btn-2{
+            font-size: larger;
+            padding: 8px 24px;
+            border-radius: 6px;
+            background: white;
+            font-weight: 600;
+            font-family: sans-serif;
+            margin: 16px 6px;
+            &:hover{
+                background-color: var(--blue-800);
+                border: 2px solid black;
+                transition: all .3s ;
+                .resume{
+                        color: var(--base-100);
+                        text-decoration: none;
+                }
+            }
+        }
+        .btn-2{
+            background: var(--blue-800);
+            .projects{
+                
+                color: var(--base-100);
+            }
+            &:hover{
+                border: 2px solid var(--blue-800);
+                background-color: var(--base-100);
+                transition: all .3s ;
+                .projects{
+                        color: var(--blue-800);
+                        text-decoration: none;
+                }
+            }
+        }
+        .social-media{
+            display: flex;
+            /* width: 70%;
+            justify-content: space-evenly; */
+            margin-top: 16px;
+            margin-left: 12px;
+            gap: 16%;
+            .linkedin,.github,.instagram{
+                .custom-icon {
+                    color: #ffffff;
+                    fill: currentColor;
+                    background-color: var(--blue-800);
+                    width: 46px;
+                    height: 46px;
+                    border-radius: 50%;
+                    padding: 4px;
+                    &:hover{
+                        background-color: var(--base-100);
+                        color: var(--blue-800);
+                        border: 2px solid var(--blue-800);
+                        transition: all .3s ;
+                    }
+                }
+                .dark .custom-icon {
+                    color: var(--base-100);
+                }
+            }
+            
+        }
+    }
+    .my-photo{
+        width: 100%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .avatar{
+            width: 265px;
+            height: 300px;
+            border: 2px solid black;
+            position: relative;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .avatar-shadow{
+            width: 265px;
+            height: 300px;
+            border: 2px solid black;
+            position: absolute;
+            left: 18px;
+            top: 18px;
+            z-index: -4;
+            background: var(--base);
+            filter: blur(16px);
+        
+        }
+    }
+}   
+@media only screen and (min-width: 1444px) {
+    .hero-section{
+        padding: 20px 60px;
+        height: 700px;
+    }
+}
