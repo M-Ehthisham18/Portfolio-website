@@ -51,7 +51,7 @@ li .contact-btn{
     color: white;
     font-weight: 800;
 }
-
+/* header section  */
 header{
     padding: 4px 20px;
     display: flex;
@@ -65,7 +65,7 @@ header{
     opacity: 0;
     animation: fadeIn 1s forwards;
     animation-delay: 0.3s; /* Delay for the header */
-    @media (max-width:700px) {
+    @media (max-width:860px) {
         padding: 10px 20px;
         display: block;
     }
@@ -132,7 +132,7 @@ header{
             display: none;
             color: var(--base-800);
             padding: 10px;
-            @media (max-width:700px)  {
+            @media (max-width:860px)  {
                 display: inline-block;
                 position: absolute;
                 top: 22px;
@@ -148,7 +148,7 @@ header{
         }
         
     }
-    @media (max-width:700px) {
+    @media (max-width:860px) {
         flex-direction: column;
         align-items: center;
         nav{
@@ -193,7 +193,7 @@ header{
         }
     }
 }
-
+/* hero section  */
 .hero-section{
     position: relative;
     height: 75vh;
@@ -205,7 +205,19 @@ header{
     /* animation  */
     opacity: 0;
     animation: fadeIn 1.5s forwards .5s;
-
+    @media (max-width:1000px){
+        .hero-section{
+            padding: 40px;
+            gap: 30px;
+        }
+    }
+    @media (max-width:860px) {
+        flex-direction: column-reverse;
+        height: auto;
+    }
+    @media (max-width:425px) {
+        padding: 40px 28px  ;
+    }
     .container {
         position: absolute;
         top: 0;
@@ -228,31 +240,56 @@ header{
         background-color: var(--blue-400);
         opacity: 0.4;
         filter: blur(80px);
-    }
-    .cover{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
+        @media (max-width:1200px) {
+            height: 400px;
+            width: 400px;
+        transform: translate(0%, 20%);
+        }
     }
     .description{
         width: 100%;
         margin: auto;
         line-height: 1.5;
+        padding-left: 48px;
         /* animation  */
         opacity: 0;
         animation: slideIn 1s forwards 1.2s;
-
+        @media (max-width:1000px) {
+            padding-left: 12px;
+        }
+        @media  (max-width:860px) {
+            text-align: center;
+            padding-left: 0;
+            max-width: 600px;
+        }
+        @media (max-width:860px) {
+            animation: slideUp 1s forwards 1.5s;
+        }
         .greeting{
             font-size: xx-large;
             font-family: sans-serif;
             font-weight: 600;
             display: block;
+            @media  (max-width:1000px) {
+                font-size: x-large;
+            }
+            @media  (max-width:860px) {
+                display: inline-block;
+            }
         }
         .my-name{
             font-size: 46px;
             font-family: Protest Strike , cursive;
             color: var(--blue-800);
+            @media (max-width:1000px) {
+                font-size: 38px;
+            }
+            @media  (max-width:860px) {
+                display: inline-block;
+            }
+            @media (max-width:425px) {
+                font-size: 32px;
+            }
         }
         .short-description{
             font-size: larger;
@@ -261,12 +298,12 @@ header{
         }
         button, .btn-2{
             font-size: larger;
-            padding: 8px 26px;
+            padding: 12px 32px;
             border-radius: 6px;
             background: white;
             font-weight: 600;
             font-family: sans-serif;
-            margin: 16px 6px;
+            margin: 42px 12px;
             transition: background-color 0.3s ease, transform 0.3s ease;
             &:hover{
                 background-color: var(--blue-800);
@@ -276,6 +313,14 @@ header{
                         color: var(--base-100);
                         text-decoration: none;
                 }
+            }
+            @media (max-width:1000px) {
+                margin-top:32px ;
+            }
+            @media (max-width:425px) {
+                font-size: 16px;
+                padding: 8px 18px;
+                margin: 24px 4px;
             }
         }
         .btn-2{
@@ -297,6 +342,7 @@ header{
             display: flex;
             margin-top: 16px;
             margin-left: 12px;
+            max-width: 480px;
             gap: 16%;
             a{
                 opacity: 0;
@@ -325,8 +371,16 @@ header{
                     color: var(--base-100);
                 }
             }
-            
+            @media (max-width:1000px) {
+                margin-top: 0;
+                margin-left: 6px;
+            }
+            @media  (max-width:860px) {
+                margin: auto;
+                justify-content: center;
+            }
         }
+        
     }
     .my-photo{
         width: 100%;
@@ -336,8 +390,12 @@ header{
         justify-content: center;
         /* animation:  */
         opacity: 0;
-        animation: fadeIn 1.5s forwards 2.1s;
-
+        animation: fadeIn 1.5s forwards 2.1s ;
+        @media (max-width:860px) {
+        animation: fadeIn 1.5s forwards .8s ;
+            
+        }
+        
         .avatar{
             width: 265px;
             height: 300px;
@@ -350,7 +408,6 @@ header{
             background-color: var(--base-100);
             z-index: -4;
             border: 2px solid black;
-
             .style-frame{
                 position: absolute;
                 width: 500px;
@@ -360,6 +417,9 @@ header{
                 rotate: -44deg;
                 /* opacity: 0; */
                 animation:roll 2.5s ease 2s ;
+                @media (max-width:860px) {
+                    animation: roll 2.5s ease .8s;
+                }
             }
             }
             img{
@@ -368,24 +428,43 @@ header{
                 border: 2px solid black;
                 /* animation:  */
                 opacity: 0;
-                animation: fadeIn 1s forwards;
-                animation-delay: 2.1s;
+                animation: fadeIn 1s forwards 2.1s;
+                @media (max-width:860px) {
+                animation: fadeIn 1s forwards 1s;
+                    
+                }
             }
         }
-        .avatar-shadow{
-            width: 265px;
-            height: 300px;
-            border: 2px solid black;
-            position: absolute;
-            left: 18px;
-            top: 18px;
-            z-index: -4;
-            background: #989898;
-            filter: blur(16px);
-        
+        @media (max-width:860px) {
+        animation: fadeIn 1.5s forwards .8s ;
+            
         }
     }
+/* Scroll Button */
+.scroll-down {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--blue-400);
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    opacity: 0;
+    animation: flicker 1.2s infinite 5s;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    z-index: 1000;
 
+    span {
+        font-size: 20px;
+    }
+    @media (max-width:425px) {
+        padding:10px 12px ;
+    }
+}
+/* media queries  */
 @media only screen and (min-width: 1444px) {
     .hero-section{
         padding: 20px 60px;
@@ -415,6 +494,16 @@ header{
         opacity: 1;
     }
 }
+@keyframes slideUp {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 @keyframes roll {
     0%{
         opacity: 0;
@@ -437,27 +526,7 @@ header{
         opacity: .8;
     }
 }
-/* Scroll Button */
-.scroll-down {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: var(--blue-400);
-    color: white;
-    font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 25px;
-    cursor: pointer;
-    opacity: 0;
-    animation: flicker 1.2s infinite 5s;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-    z-index: 1000;
 
-    span {
-        font-size: 20px;
-    }
-}
 
 
 
