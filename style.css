@@ -433,9 +433,8 @@ header{
                 width: 90%;
                 height: 90%;
                 border: 2px solid black;
-                object-fit: cover;
                 rotate: 1deg;
-                scale: 1.0;
+                scale: 1;
                 /* animation:  */
                 opacity: 0;
                 animation: fadeIn 1s forwards 2.1s;
