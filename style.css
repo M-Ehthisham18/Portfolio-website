@@ -105,6 +105,9 @@ header{
             .logo-text{
                 font-size: 18px;
             }
+            .logo-holder{
+                padding: 0;
+            }
         }
     }
 
@@ -132,12 +135,15 @@ header{
             display: none;
             color: var(--base-800);
             padding: 10px;
+            transition: 1s ease; 
             @media (max-width:860px)  {
                 display: inline-block;
                 position: absolute;
                 top: 22px;
                 right: 25px;
-                
+                .logo-holder{
+                    padding: 0;
+                }
             }
             @media (max-width:700px)  {
                 right: 10px;
@@ -164,6 +170,7 @@ header{
                     width: 100%;
                 }
                 &.active{
+                    transition:all 1s;
                     display: flex;
                 } 
             }
@@ -381,7 +388,7 @@ header{
             }
         }
         
-    }
+    } 
     .my-photo{
         width: 100%;
         margin: auto;
@@ -426,6 +433,9 @@ header{
                 width: 90%;
                 height: 90%;
                 border: 2px solid black;
+                object-fit: cover;
+                rotate: 1deg;
+                scale: 1.0;
                 /* animation:  */
                 opacity: 0;
                 animation: fadeIn 1s forwards 2.1s;
