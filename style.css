@@ -433,7 +433,7 @@ header{
                 width: 90%;
                 height: 90%;
                 border: 2px solid black;
-                rotate: 1deg;
+                /* rotate: 1deg; */
                 scale: 1;
                 object-fit: fill;
                 /* animation:  */
