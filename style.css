@@ -61,6 +61,10 @@ header{
     border-bottom: 2px solid rgba(0,0,0,0.4);
     border-radius: 10px;
     text-transform: capitalize;
+    /* animation  */
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 0.3s; /* Delay for the header */
     @media (max-width:700px) {
         padding: 10px 20px;
         display: block;
@@ -192,13 +196,16 @@ header{
 
 .hero-section{
     position: relative;
-    border: 2px solid black;
     height: 75vh;
     max-width: 1440px;
     margin: auto;
     display: flex;
     padding: 60px;
-    gap: 60px;
+    gap: 40px;
+    /* animation  */
+    opacity: 0;
+    animation: fadeIn 1.5s forwards .5s;
+
     .container {
         position: absolute;
         top: 0;
@@ -222,10 +229,20 @@ header{
         opacity: 0.4;
         filter: blur(80px);
     }
+    .cover{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
     .description{
         width: 100%;
         margin: auto;
         line-height: 1.5;
+        /* animation  */
+        opacity: 0;
+        animation: slideIn 1s forwards 1.2s;
+
         .greeting{
             font-size: xx-large;
             font-family: sans-serif;
@@ -244,16 +261,17 @@ header{
         }
         button, .btn-2{
             font-size: larger;
-            padding: 8px 24px;
+            padding: 8px 26px;
             border-radius: 6px;
             background: white;
             font-weight: 600;
             font-family: sans-serif;
             margin: 16px 6px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
             &:hover{
                 background-color: var(--blue-800);
                 border: 2px solid black;
-                transition: all .3s ;
+                transform: scale(1.05);
                 .resume{
                         color: var(--base-100);
                         text-decoration: none;
@@ -262,27 +280,30 @@ header{
         }
         .btn-2{
             background: var(--blue-800);
-            .projects{
-                
-                color: var(--base-100);
-            }
             &:hover{
                 border: 2px solid var(--blue-800);
                 background-color: var(--base-100);
-                transition: all .3s ;
+                transform: scale(1.05);
                 .projects{
                         color: var(--blue-800);
                         text-decoration: none;
                 }
             }
+            .projects{
+                color: var(--base-100);
+            }
         }
         .social-media{
             display: flex;
-            /* width: 70%;
-            justify-content: space-evenly; */
             margin-top: 16px;
             margin-left: 12px;
             gap: 16%;
+            a{
+                opacity: 0;
+                animation: fadeIn 1s forwards 2s;
+                transition: transform 0.3s;
+            }
+            
             .linkedin,.github,.instagram{
                 .custom-icon {
                     color: #ffffff;
@@ -297,6 +318,7 @@ header{
                         color: var(--blue-800);
                         border: 2px solid var(--blue-800);
                         transition: all .3s ;
+                        transform: scale(1.2);
                     }
                 }
                 .dark .custom-icon {
@@ -312,14 +334,42 @@ header{
         display: flex;
         align-items: center;
         justify-content: center;
+        /* animation:  */
+        opacity: 0;
+        animation: fadeIn 1.5s forwards 2.1s;
+
         .avatar{
             width: 265px;
             height: 300px;
             border: 2px solid black;
             position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background-color: var(--base-100);
+            z-index: -4;
+            border: 2px solid black;
+
+            .style-frame{
+                position: absolute;
+                width: 500px;
+                height: 100px;
+                background-color: var(--blue-800);
+                z-index: -2;
+                rotate: -44deg;
+                /* opacity: 0; */
+                animation:roll 2.5s ease 2s ;
+            }
+            }
             img{
-                width: 100%;
-                height: 100%;
+                width: 90%;
+                height: 90%;
+                border: 2px solid black;
+                /* animation:  */
+                opacity: 0;
+                animation: fadeIn 1s forwards;
+                animation-delay: 2.1s;
             }
         }
         .avatar-shadow{
@@ -330,15 +380,48 @@ header{
             left: 18px;
             top: 18px;
             z-index: -4;
-            background: var(--base);
+            background: #989898;
             filter: blur(16px);
         
         }
     }
-}   
+
 @media only screen and (min-width: 1444px) {
     .hero-section{
         padding: 20px 60px;
         height: 700px;
+    }
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes roll {
+    0%{
+        opacity: 0;
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(180deg);
+        opacity: 1;
     }
 }
