@@ -458,10 +458,6 @@ header{
         font-size: 20px;
     }
 }
-.hide {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-}
+
 
 
