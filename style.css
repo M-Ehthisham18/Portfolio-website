@@ -29,6 +29,11 @@
     font-weight: 400;
     font-style: normal;
 }
+.edu-au-vic-wa-nt-guides {
+    font-family: "Edu AU VIC WA NT Guides", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
+  }
 
 body {
     font-family: "Open Sans", sans-serif;
@@ -69,13 +74,9 @@ header{
         padding: 10px 20px;
         display: block;
     }
-    @media (max-width:1000px) {
-        flex-direction: column;
-        align-items: center;
-    }
     .logo-holder{
         display: flex;
-        padding: 10px;
+        padding: 0px;
         align-items: center;
         font-weight: 600;
         color: var(--base-800);
@@ -177,17 +178,12 @@ header{
 
         }
     }
-    @media (max-width:1000px) {
-        nav{
-            width: 100%;
-            justify-content: center;
-        }
-        ul{
-            width: 90%;
-            display: flex;
-            justify-content: space-evenly;
-        }
-    }
+    @media (max-width:1000px) { 
+        li{
+            font-size: 20px;
+        } 
+        
+     } 
     @media only screen and (max-width:480px) {
         header{
             padding:4px 10px;
@@ -232,7 +228,7 @@ header{
         z-index: -10;
         height: 100%;
         width: 100%;
-        background-color: var(--yellow-50);
+        /* background-color: var(--yellow-50); */
     }
     .circle {
         position: absolute;
@@ -474,7 +470,7 @@ header{
         padding:10px 12px ;
     }
 }
-/* media queries  */
+/* media queries for hero section */
 @media only screen and (min-width: 1444px) {
     .hero-section{
         padding: 20px 60px;
@@ -537,6 +533,106 @@ header{
     }
 }
 
+.about-me{
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+    padding: 32px;
+    /* color: var(--blue-800); */
+    font-family: Edu AU VIC WA NT Guides,sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(20px); 
+    transition: opacity 0.5s ease, transform 0.5s ease;
+
+    /* //typing animation */
+    #typed-text {
+        font-size: 1.2rem;
+        border-right: 2px solid black;
+        width: fit-content;
+        white-space: nowrap;
+        overflow: hidden;
+        font-size: x-large;
+        font-family: "Protest Strike", sans-serif;
+        color: var(--blue-800);
+        margin-bottom: 16px;
+    }
+    @keyframes typing {
+        from {
+        width: 0;
+        }
+        to {
+        width: 100%;
+        }
+    }
+    @keyframes blink-caret {
+        from, to {
+        border-color: transparent;
+        }
+        50% {
+        border-color: black;
+        }
+    }
+    #typed-text {
+        animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
+    }
+
+    p{
+        padding: 0 16px;
+        line-height: 1.5;
+        letter-spacing: .5px;
+    }
+}
+
+.about-me.visible {
+    opacity: 1; 
+    transform: translateY(0); 
+}
 
 
+.scroll-down {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--blue-400);
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    opacity: 0;
+    animation: flicker 1.2s infinite 5s;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    z-index: 1000;
 
+    span {
+        font-size: 20px;
+    }
+
+    @media (max-width: 425px) {
+        padding: 10px 12px;
+    }
+}
+
+.scroll-down:active {
+    animation: clickAnimation 0.3s; /* Trigger animation on click */
+}
+
+@keyframes clickAnimation {
+    0% {
+        transform: translateX(-50%) scale(1);
+    }
+    50% {
+        transform: translateX(-50%) scale(1.1); /* Scale up */
+    }
+    100% {
+        transform: translateX(-50%) scale(1); /* Scale back to original */
+    }
+}
+#scrollDownBtn.hide {
+    display: none; /* or visibility: hidden; */
+}
