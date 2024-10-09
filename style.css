@@ -18,6 +18,9 @@
     --blue-400:#61dafb;
     --blue-800:#0a61a2;
     --blue-900:#001b3b;
+    --width:100px ;
+        --height:150px;
+        --quantity:9;
 }
 .coming-soon-regular {
     font-family: "Coming Soon", cursive;
@@ -651,48 +654,55 @@ header{
 #scrollDownBtn.hide {
     display: none;
 }
-
-.skills {
-    width: 80%;
-    max-width: 1200px;
-    margin: auto;
-    overflow: hidden;
-}
-
-.skills-container {
-    display: flex;
-    overflow: hidden; /* Hide the overflowing content */
-    width: 100%; /* Adjust based on your layout */
-}
-
-.skills-icon {
-    display: flex;
-    /* animation: flow 20s linear infinite; */
-    white-space: nowrap; /* Prevent line breaks */
-    gap: 50px   ;
-}
-
-.icon-text {
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 24px;
-    font-weight: 700;
-    margin-top: 16px;
-    font-family: serif;
-}
-
-#skill {
+.skills{
     text-align: center;
     font-size: xx-large;
-    font-family: "Protest Strike", sans-serif;
     color: var(--blue-800);
+    font-weight: 700;
+    margin-bottom: 16px;
+    font-family:"Protest Strike", sans-serif ;
+}
+.slider{
+    width: 85%;
+    margin: auto;
+    padding: 20px 30px;
+    max-width: 1440px;
+    border: 2px solid black;
+    height: var(--height);
+    overflow: hidden;
+    mask-image: linear-gradient(
+        to right,transparent , #000 10% 90%,transparent
+    );
+}
+ .slider .list{
+    display: flex;
+    width: 100%;
+    min-width: calc(var(--width) * var(--quantity));
+    position: relative;
+}
+.slider .list .item{
+    width: var(--width);
+    height: var(--height);
+    position: absolute;
+    left: 110%;
+    filter: drop-shadow(2px 4px 6px black);
+    animation: flow 10s linear infinite;
+    animation-delay: calc(( 10s / var(--quantity))* ( var(--position) - 1)) ;
+ 
+}
+.slider .list .item img{
+    width: 100%;
+    object-fit: cover;
 }
 
-@keyframes flow {
-    0% {
-        transform: translateX(0); /* Start position */
+@keyframes flow{
+    from{
+        left: 100%;
+    }to{
+        left:calc(var(--width) * -1)
     }
-    100% {
-        transform: translateX(-100%); /* End position */
-    }
+}
+.slider:hover{
+    animation-play-state: paused !important;
+
 }
