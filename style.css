@@ -545,11 +545,11 @@ header{
 
 .about-me{
     width: 100%;
-    max-width: 900px;
+    max-width: 1000px;
     margin: auto;
     text-align: center;
     padding: 32px;
-    /* color: var(--blue-800); */
+    margin-bottom: 42px;
     font-family: Edu AU VIC WA NT Guides,sans-serif;
     display: flex;
     flex-direction: column;
@@ -560,12 +560,11 @@ header{
 
     /* //typing animation */
     #typed-text {
-        font-size: 1.2rem;
         border-right: 2px solid black;
         width: fit-content;
         white-space: nowrap;
         overflow: hidden;
-        font-size: x-large;
+        font-size: xx-large;
         font-family: "Protest Strike", sans-serif;
         color: var(--blue-800);
         margin-bottom: 16px;
@@ -591,9 +590,15 @@ header{
     }
 
     p{
-        padding: 0 16px;
+        padding: 0 20px;
         line-height: 1.5;
         letter-spacing: .5px;
+        font-size: 20px;
+        font-weight: 400;
+        font-style: italic;
+        @media (max-width:768px) {
+            font-size: 16px;
+        }
     }
 }
 
@@ -629,7 +634,7 @@ header{
 }
 
 .scroll-down:active {
-    animation: clickAnimation 0.3s; /* Trigger animation on click */
+    animation: clickAnimation 0.3s;
 }
 
 @keyframes clickAnimation {
@@ -637,12 +642,57 @@ header{
         transform: translateX(-50%) scale(1);
     }
     50% {
-        transform: translateX(-50%) scale(1.1); /* Scale up */
+        transform: translateX(-50%) scale(1.1); 
     }
     100% {
-        transform: translateX(-50%) scale(1); /* Scale back to original */
+        transform: translateX(-50%) scale(1);
     }
 }
 #scrollDownBtn.hide {
-    display: none; /* or visibility: hidden; */
+    display: none;
+}
+
+.skills {
+    width: 80%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.skills-container {
+    display: flex;
+    overflow: hidden; /* Hide the overflowing content */
+    width: 100%; /* Adjust based on your layout */
+}
+
+.skills-icon {
+    display: flex;
+    /* animation: flow 20s linear infinite; */
+    white-space: nowrap; /* Prevent line breaks */
+    gap: 50px   ;
+}
+
+.icon-text {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 16px;
+    font-family: serif;
+}
+
+#skill {
+    text-align: center;
+    font-size: xx-large;
+    font-family: "Protest Strike", sans-serif;
+    color: var(--blue-800);
+}
+
+@keyframes flow {
+    0% {
+        transform: translateX(0); /* Start position */
+    }
+    100% {
+        transform: translateX(-100%); /* End position */
+    }
 }
