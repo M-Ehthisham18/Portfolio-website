@@ -61,6 +61,10 @@ li .contact-btn {
   background-color: var(--blue-800);
   color: white;
   font-weight: 800;
+  &:hover{
+    color: var(--blue);
+    border: 2px solid var(--blue);
+  }
 }
 /* header section  */
 main {
@@ -366,7 +370,7 @@ header {
 
       .linkedin,
       .github,
-      .instagram {
+      .mail {
         .custom-icon {
           color: #ffffff;
           fill: currentColor;
