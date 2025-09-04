@@ -18,9 +18,10 @@
   --blue-400: #61dafb;
   --blue-800: #0a61a2;
   --blue-900: #001b3b;
-  --width: 100px;
-  --height: 150px;
-  --quantity: 9;
+  --width: 90px;
+  --height: 130px;
+  --quantity: 13;
+  
 }
 .coming-soon-regular {
   font-family: "Coming Soon", cursive;
@@ -681,6 +682,7 @@ header {
 .slider .list .item img {
   width: 100%;
   object-fit: cover;
+  margin-right: 24px;
 }
 
 @keyframes flow {
